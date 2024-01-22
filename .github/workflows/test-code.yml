@@ -20,6 +20,7 @@ jobs:
       - name: Test app
         run: dotnet test --no-restore --verbosity normal
       - name: Post issue
+        if: failure()
         uses: dacbc/create-issue-action@main
         with:
           token: ${{ secrets.TOKEN }}
