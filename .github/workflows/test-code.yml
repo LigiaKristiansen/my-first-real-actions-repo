@@ -1,6 +1,9 @@
 name: Test code
-on: push
-jobs: 
+
+on:
+  push
+
+jobs:
   test-code-job:
     runs-on: ubuntu-latest
     steps:
@@ -16,4 +19,10 @@ jobs:
         run: dotnet build --no-restore
       - name: Test app
         run: dotnet test --no-restore --verbosity normal
+      - name: Post issue
+        uses: dacbc/create-issue-action@main
+        with:
+          token: ${{ secrets.TOKEN }}
+          title: Tests failed
+          body: Some of the tests didn't pass. Fix it!
             
