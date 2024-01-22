@@ -1,4 +1,8 @@
 name: My First Real Worklow
 on: push
 jobs:
-        
+  print-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo command
+        run: echo "Hello world"
