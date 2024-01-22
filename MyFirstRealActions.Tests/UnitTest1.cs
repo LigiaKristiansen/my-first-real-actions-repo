@@ -8,7 +8,7 @@ namespace MyFirstRealActions.Tests
         public void Test1()
         {
             string expected = "Hello World!";   
-            string result = "Hello World!";
+            string result = "Hello";
             result.Should().BeEquivalentTo(expected);
         }
     }
